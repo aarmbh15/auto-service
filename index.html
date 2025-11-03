@@ -9,6 +9,20 @@
     <meta property="og:image" content="assets/og-image.jpg" />
     <meta property="og:url" content="https://Smart Auto Electrics.co.uk" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ==== FONT FIX START ==== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+  <style>
+    *, *::before, *::after { font-family: 'Space Grotesk', system-ui, sans-serif !important; }
+  </style>
+  
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -33,7 +47,7 @@
         },
       };
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
    <link rel="icon" type="image/png" href="assets/logo.png" />
 
   </head>
@@ -51,7 +65,7 @@
 
       <div class="container mx-auto px-6 text-center z-10">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300">Precision. Performance. Perfection.</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">Precision. Performance. Perfection.</span>
         </h1>
         <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
           Expert Mobile Car Diagnostics & ECU Tuning You Can Trust.

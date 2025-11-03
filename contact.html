@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <title>Contact & Booking | AutoElite</title>
   <meta name="description" content="Book service, request quote, or visit our workshop. Mobile across UK.">
+
+  <!-- ==== FONT FIX START ==== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+  <style>
+    *, *::before, *::after { font-family: 'Space Grotesk', system-ui, sans-serif !important; }
+  </style>
   
   <!-- Tailwind CDN (dev only) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,9 +31,12 @@
       },
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet"> -->
   <link rel="icon" type="image/png" href="assets/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-dark text-light min-h-screen">
 
@@ -34,7 +50,7 @@
     <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] relative z-10 text-center">
       <h1 class="text-5xl md:text-7xl font-bold mb-12 mt-14 md:mt-0 
            bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 
-           pb-2 md:pb-4 leading-tight tracking-tight">
+           pb-2 md:pb-4 leading-tight tracking-tight animate-pulse">
   Contact & Booking
 </h1>
       <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 text-white">
@@ -64,26 +80,53 @@
         Get in Touch
       </h1>
 
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
-        <input type="text" name="name" placeholder="Name" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
-        <input type="email" name="email" placeholder="Email" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
-        <input type="tel" name="phone" placeholder="Phone" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
-        <input type="text" name="vehicle" placeholder="Vehicle Make / Model / Year" class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
-        <select name="service" class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
-          <option class="text-gray-900">ECU Remap</option>
-          <option class="text-gray-900">Mobile Diagnostics</option>
-          <option class="text-gray-900">Ghost Immobiliser</option>
-          <option class="text-gray-900">Other</option>
-        </select>
-        <input 
-          type="datetime-local" 
-          name="date" 
-          class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
-        >
-        <textarea name="message" placeholder="Message (optional)" rows="4" class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
-        <button type="submit" class="w-full bg-primary text-dark py-3 rounded-full font-bold hover:shadow-neon transition">
+      <!-- Added: hidden iframe for legacy fallback (kept for safety) -->
+      <iframe name="hiddenIframe" style="display:none;"></iframe>
+
+      <form id="contactForm" method="POST" target="hiddenIframe" class="space-y-5" novalidate>
+        <div class="relative">
+          <input type="text" name="name" placeholder="Name" required class="w-full p-3 bg-white/10 text-white border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 peer">
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Name must be at least 2 characters and contain only letters/spaces.</p>
+        </div>
+        <div class="relative">
+          <input type="email" name="email" placeholder="Email" required class="w-full p-3 bg-white/10 text-white border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 peer">
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Please enter a valid email (e.g., user@example.com).</p>
+        </div>
+        <div class="relative">
+          <input type="tel" name="phone" placeholder="Phone (e.g., 07123456789)" required class="w-full p-3 bg-white/10 text-white border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 peer">
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Please enter a valid UK phone number (10-15 digits, optional +44 or spaces).</p>
+        </div>
+        <div class="relative">
+          <input type="text" name="vehicle" placeholder="Vehicle Make / Model / Year (optional)" class="w-full p-3 bg-white/10 text-white border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 peer">
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Vehicle details too long (max 100 characters).</p>
+        </div>
+        <div class="relative">
+          <select name="service" required class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+            <option value="" class="text-gray-900" disabled selected>Select a service</option>
+            <option class="text-gray-900">ECU Remap</option>
+            <option class="text-gray-900">Mobile Diagnostics</option>
+            <option class="text-gray-900">Ghost Immobiliser</option>
+            <option class="text-gray-900">Other</option>
+          </select>
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Please select a service.</p>
+        </div>
+        <div class="relative">
+          <input 
+            type="datetime-local" 
+            name="date" 
+            class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 peer"
+            style="color-scheme: dark;"
+          >
+          <p class="error-msg hidden text-red-400 text-sm mt-1">Please select a date and time at least 24 hours from now.</p>
+        </div>
+        <div class="relative">
+          <textarea name="message" placeholder="Message (optional, max 250 characters)" rows="4" maxlength="250" class="w-full p-3 bg-white/10 text-white border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+          <div id="charCount" class="text-sm text-gray-400 text-right">0/250</div>
+        </div>
+        <button id="submitBtn" type="submit" disabled class="w-full bg-primary/50 text-dark py-3 rounded-full font-bold transition cursor-not-allowed">
           Send Request
         </button>
+        <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
       </form>
     </div>
 
@@ -105,7 +148,7 @@
         muted
         playsinline
         loop>
-        <source src="assets/car.mp4" type="video/mp4">
+        <source src="assets/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -116,34 +159,7 @@
 
   <!-- ==================== SCRIPTS ==================== -->
   <script src="js/include.js"></script>
+  <script src="js/contact.js"></script>
 
-  <!-- Video Autoplay Logic (CLEAN) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.getElementById('workshop-video');
-      if (!video) return;
-
-      let hasPlayed = false;
-
-      const tryPlay = () => video.play().then(() => hasPlayed = true).catch(() => {});
-
-      // Try autoplay
-      tryPlay();
-
-      // Play on first interaction
-      const playOnInteract = () => { if (!hasPlayed) tryPlay(); };
-      document.addEventListener('click', playOnInteract, { once: true });
-      document.addEventListener('touchstart', playOnInteract, { once: true });
-
-      // Pause when out of view
-      const observer = new IntersectionObserver(
-        entries => entries.forEach(entry => {
-          if (!entry.isIntersecting && hasPlayed) video.pause();
-        }),
-        { threshold: 0.3 }
-      );
-      observer.observe(video);
-    });
-  </script>
 </body>
 </html>
