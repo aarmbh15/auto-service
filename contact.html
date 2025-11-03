@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact & Booking | AutoElite</title>
+  <meta name="description" content="Book service, request quote, or visit our workshop. Mobile across UK.">
+  
+  <!-- Tailwind CDN (dev only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#19D8F8", accent: "#013E75", dark: "#000000", light: "#F8FAFC" },
+          fontFamily: { sans: ["'Space Grotesk'", "system-ui"] },
+          boxShadow: { glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', neon: '0 0 20px rgba(25, 216, 248, 0.5)' },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-dark text-light min-h-screen">
+
+  <!-- Header -->
+  <div include-html="components/header.html"></div>
+  <div include-html="components/whatsapp-button.html"></div>
+
+  <!-- Hero Section -->
+  <section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
+    <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] relative z-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-12 mt-14 md:mt-0 
+           bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 
+           pb-2 md:pb-4 leading-tight tracking-tight">
+  Contact & Booking
+</h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 text-white">
+        Book your ECU remap, diagnostics, or Ghost immobiliser installation. Mobile across the UK or visit our workshop.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact-form" class="inline-block bg-primary text-dark py-3 px-8 rounded-full font-bold hover:shadow-neon transition transform hover:scale-105">
+          Book Now
+        </a>
+        <a href="tel:+44XXXXXXXXXX" class="inline-block bg-primary text-dark py-3 px-8 rounded-full font-bold hover:shadow-neon transition transform hover:scale-105">
+          Call Us
+        </a>
+       
+        <a href="https://wa.me/+44XXXXXXXXXX" class="inline-block text-white bg-green-500 py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition">
+          Contact Us on WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+  </section>
+
+  <!-- Contact Form + Map + Video -->
+  <section class="py-20 container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] grid md:grid-cols-2 gap-12" id="contact-form">
+    <div data-aos="fade-right">
+      <h1 class="text-5xl md:text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300">
+        Get in Touch
+      </h1>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+        <input type="text" name="name" placeholder="Name" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <input type="email" name="email" placeholder="Email" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <input type="tel" name="phone" placeholder="Phone" required class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <input type="text" name="vehicle" placeholder="Vehicle Make / Model / Year" class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <select name="service" class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50">
+          <option class="text-gray-900">ECU Remap</option>
+          <option class="text-gray-900">Mobile Diagnostics</option>
+          <option class="text-gray-900">Ghost Immobiliser</option>
+          <option class="text-gray-900">Other</option>
+        </select>
+        <input 
+          type="datetime-local" 
+          name="date" 
+          class="w-full p-3 text-white bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
+        >
+        <textarea name="message" placeholder="Message (optional)" rows="4" class="w-full p-3 bg-white/10 border border-primary/30 rounded focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+        <button type="submit" class="w-full bg-primary text-dark py-3 rounded-full font-bold hover:shadow-neon transition">
+          Send Request
+        </button>
+      </form>
+    </div>
+
+    <div data-aos="fade-left">
+      <!-- Google Maps -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.778831940561!2d-0.139142684229!3d51.507350879636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMzAnMjYuNSJOIDBDoDA4JzM4LjUiVw!5e0!3m2!1sen!2suk!4v1234567890" 
+        class="w-full h-96 rounded-xl shadow-glass" 
+        loading="lazy" 
+        allowfullscreen>
+      </iframe>
+
+      <!-- SINGLE VIDEO (Removed duplicate) -->
+      <video
+        id="workshop-video"
+        poster="https://images.unsplash.com/photo-1544636331-9007c6c9c9e8?auto=format&fit=crop&w=1200&q=80"
+        class="w-full mt-8 rounded-xl shadow-glass"
+        preload="metadata"
+        muted
+        playsinline
+        loop>
+        <source src="assets/car.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Footer (NO EXTRA MARGIN) -->
+  <div include-html="components/footer.html"></div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/include.js"></script>
+
+  <!-- Video Autoplay Logic (CLEAN) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('workshop-video');
+      if (!video) return;
+
+      let hasPlayed = false;
+
+      const tryPlay = () => video.play().then(() => hasPlayed = true).catch(() => {});
+
+      // Try autoplay
+      tryPlay();
+
+      // Play on first interaction
+      const playOnInteract = () => { if (!hasPlayed) tryPlay(); };
+      document.addEventListener('click', playOnInteract, { once: true });
+      document.addEventListener('touchstart', playOnInteract, { once: true });
+
+      // Pause when out of view
+      const observer = new IntersectionObserver(
+        entries => entries.forEach(entry => {
+          if (!entry.isIntersecting && hasPlayed) video.pause();
+        }),
+        { threshold: 0.3 }
+      );
+      observer.observe(video);
+    });
+  </script>
+</body>
+</html>

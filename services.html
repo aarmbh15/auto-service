@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services | AutoElite – ECU Remap, Diagnostics, Security</title>
+  <meta name="description" content="Professional ECU tuning, vehicle diagnostics, auto locksmith, security upgrades, and mobile services.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#19D8F8", accent: "#013E75", dark: "#000000", light: "#F8FAFC" },
+          fontFamily: { sans: ["'Space Grotesk'", "system-ui"] },
+          boxShadow: { glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', neon: '0 0 20px rgba(25, 216, 248, 0.5)' },
+        },
+      },
+    };
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+   <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-dark text-light min-h-screen">
+
+ <div include-html="components/header.html"></div>
+ <div include-html="components/whatsapp-button.html"></div>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-accent via-black to-accent/90 py-32 md:py-40">
+    <!-- Optional Background Image (Uncomment & replace with your hero image) -->
+    <!-- <div class="absolute inset-0 -z-10">
+      <img src="assets/hero-services.jpg" alt="AutoElite Performance" class="w-full h-full object-cover opacity-40">
+    </div> -->
+
+    <!-- Subtle animated grid overlay -->
+    <div class="absolute inset-0 -z-10 opacity-10">
+      <div class="h-full w-full bg-gradient-to-t from-transparent via-primary/20 to-transparent"></div>
+    </div>
+
+    <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] relative z-10 text-center">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-cyan-300 to-primary animate-pulse leading-tight">
+        Premium Performance<br><span class="text-4xl md:text-6xl">Delivered</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 leading-relaxed">
+        ECU Remapping • Mobile Diagnostics • Ghost Immobiliser • UK-Wide Service
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12">
+        <a href="#ecu" class="inline-flex items-center px-10 py-5 bg-primary text-dark font-bold rounded-full text-lg hover:bg-cyan-400 hover:shadow-neon transition-all duration-300 transform hover:scale-105">
+          Explore Services
+        </a>
+        <a href="contact.html" class="inline-flex items-center px-10 py-5 bg-transparent border-2 border-primary text-primary font-bold rounded-full text-lg hover:bg-primary/20 hover:border-cyan-300 transition-all duration-300">
+          Book Now
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap justify-center gap-8 mt-16 text-sm text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="text-primary">Check</span> 5,000+ Vehicles Tuned
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-primary">Check</span> UK Mobile Service
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-primary">Check</span> Insurance Approved
+        </div>
+      </div>
+    </div>
+
+    <!-- Neon bottom glow line -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-70"></div>
+  </section>
+
+  <section class="py-20 container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem]">
+    <h1 class="text-5xl md:text-6xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300">
+      Premium Automotive Services
+    </h1>
+    <p class="text-center max-w-3xl mx-auto mb-16 opacity-90">
+      We deliver performance, reliability, and security with cutting-edge tools and certified expertise.
+    </p>
+
+    <!-- ECU Remap -->
+    <div id="ecu" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-right">
+      <div>
+        <video poster="assets/ecu-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/ECU_ID.mp4"></video>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mb-4 text-primary">ECU Remapping</h2>
+        <p class="mb-4">Safe, custom tunes for <strong>20–40 %</strong> gains in power & torque. Stage 1–3 available.</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-300">
+          <li>Dyno-tested before/after</li>
+          <li>Fuel economy improvements</li>
+          <li>Reversible & warranty-safe</li>
+        </ul>
+        <a href="contact.html?service=ECU+Remap" class="inline-flex items-center bg-primary text-dark px-6 py-3 rounded-full font-bold hover:shadow-neon transition">
+          Book ECU Remap
+        </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Mobile Diagnostics -->
+    <div id="diagnostics" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-left">
+      <div class="order-last md:order-first">
+        <h2 class="text-3xl font-bold mb-4 text-primary">Mobile Diagnostics</h2>
+        <p class="mb-4">Full OBD-II diagnostic capability at your doorstep – fast, accurate fault detection.</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-300">
+          <li>All major makes supported</li>
+          <li>Live data & coding</li>
+          <li>Transparent pricing</li>
+        </ul>
+        <a href="contact.html?service=Diagnostics" class="inline-flex items-center bg-primary text-dark px-6 py-3 rounded-full font-bold hover:shadow-neon transition">
+          Book Diagnostics
+        </a>
+      </div>
+      <div>
+        <video poster="assets/diag-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/DIAG_ID.mp4"></video>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Ghost Immobiliser -->
+    <div id="security" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-right">
+      <div>
+        <video poster="assets/ghost-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/GHOST_ID.mp4"></video>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mb-4 text-primary">Ghost Immobiliser & Security</h2>
+        <p class="mb-4">Industry-leading anti-theft protection – undetectable, unbeatable.</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-300">
+          <li>Authorised Autowatch installer</li>
+          <li>Key-cloning protection</li>
+          <li>Insurance-approved</li>
+        </ul>
+        <a href="contact.html?service=Ghost+Immobiliser" class="inline-flex items-center bg-primary text-dark px-6 py-3 rounded-full font-bold hover:shadow-neon transition">
+          Book Security Upgrade
+        </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- FAQ -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h3 class="text-3xl font-bold mb-8 text-center text-primary">Frequently Asked Questions</h3>
+      <div class="space-y-4">
+        <details class="bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-xl p-4 cursor-pointer" data-aos="fade-up">
+          <summary class="font-semibold text-lg">Is remapping safe for my engine?</summary>
+          <p class="mt-2 text-gray-300">Yes. All files are dyno-tested and respect OEM safety limits. We have tuned over 5,000 vehicles without a single failure.</p>
+        </details>
+        <details class="bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-xl p-4 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+          <summary class="font-semibold text-lg">Do you come to me?</summary>
+          <p class="mt-2 text-gray-300">Absolutely – our mobile service covers the entire UK. Book a slot and we’ll be at your home or workplace.</p>
+        </details>
+        <details class="bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-xl p-4 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+          <summary class="font-semibold text-lg">Will a Ghost immobiliser affect my warranty?</summary>
+          <p class="mt-2 text-gray-300">No. The system is completely hidden and does not modify any factory ECU parameters.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-20 bg-gradient-to-r from-primary via-cyan-500 to-primary text-dark">
+    <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to experience peak performance?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">Join 500+ drivers who trust AutoElite.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-block px-10 py-5 bg-black text-primary font-bold rounded-full text-lg hover:bg-gray-900 hover:shadow-neon transition-all duration-300">
+          Book Now
+        </a>
+        <a href="contact.html#quote" class="inline-block px-10 py-5 bg-transparent border-2 border-black text-black font-bold rounded-full text-lg hover:bg-black/20 transition-all duration-300">
+          Request a Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div include-html="components/footer.html"></div>
+
+  <!-- Load your scripts file -->
+  <div include-html="scripts.html"></div>
+  <script src="js/include.js"></script>
+</body>
+</html>

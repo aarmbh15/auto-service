@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Auto Electrics | Premium ECU Tuning & Security</title>
+    <meta name="description" content="Smart Auto Electrics provides expert mobile car diagnostics, ECU tuning, and performance upgrades across the UK. Precision automotive solutions at your doorstep." />
+    <meta property="og:title" content="Smart Auto Electrics | Premium Automotive Tuning" />
+    <meta property="og:description" content="Performance. Precision. Protection." />
+    <meta property="og:image" content="assets/og-image.jpg" />
+    <meta property="og:url" content="https://Smart Auto Electrics.co.uk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#19D8F8",
+              accent: "#013E75",
+              dark: "#000000",
+              light: "#F8FAFC",
+            },
+            fontFamily: { sans: ["'Space Grotesk'", "system-ui"] },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+              'neon': '0 0 20px rgba(25, 216, 248, 0.5)',
+            },
+            backdropBlur: { 'md': '8px' },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+   <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  </head>
+  <body class="bg-dark text-light min-h-screen overflow-x-hidden">
+  <div include-html="components/header.html"></div>
+   <div include-html="components/whatsapp-button.html"></div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
+      <video autoplay muted loop playsinline poster="assets/car.mp4" class="absolute w-full h-full object-cover -z-10" loading="lazy" data-src="assets/car.mp4">
+        <source type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-primary/20"></div>
+
+      <div class="container mx-auto px-6 text-center z-10">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300">Precision. Performance. Perfection.</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
+          Expert Mobile Car Diagnostics & ECU Tuning You Can Trust.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="group relative inline-flex items-center px-8 py-4 bg-primary text-dark font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon">
+            <span class="relative z-10">Book Now</span>
+            <span class="absolute inset-0 bg-white/20 scale-0 group-hover:scale-150 transition-transform duration-500 rounded-full"></span>
+          </a>
+          <a href="contact.html#quote" class="px-8 py-4 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-dark transition-all duration-300">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+      <!-- Decorative neon line -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+    </section>
+
+    <!-- SERVICES GRID -->
+     <section class="py-20 bg-black/30">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">Core Services</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- ECU Remap -->
+      <div data-aos="fade-up" class="group relative bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl p-8 hover:border-primary/60 transition-all duration-500 hover:-translate-y-3 hover:shadow-glass">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/40 transition">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-primary">ECU Remap</h3>
+          <p class="text-gray-300 mb-4">Up to 40% power & torque. Safe, dyno-proven gains.</p>
+          <a href="services.html#ecu" class="inline-flex items-center text-primary font-medium hover:underline">
+            Learn More
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Diagnostics -->
+      <div data-aos="fade-up" data-aos-delay="100" class="group relative bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl p-8 hover:border-primary/60 transition-all duration-500 hover:-translate-y-3 hover:shadow-glass">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/40 transition">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.75 17.25v-5.5m0 0V6.75a2.25 2.25 0 014.5 0v5m-4.5 0h4.5m-6.75 7.5h10.5a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v9a2.25 2.25 0 002.25 2.25z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-primary">Mobile Diagnostics</h3>
+          <p class="text-gray-300 mb-4">We come to you with full OBD2 diagnostic capability — accurate fault detection at your doorstep.</p>
+          <a href="services.html#diagnostics" class="inline-flex items-center text-primary font-medium hover:underline">
+            Learn More
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ghost Immobiliser & Security -->
+      <div data-aos="fade-up" data-aos-delay="200" class="group relative bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl p-8 hover:border-primary/60 transition-all duration-500 hover:-translate-y-3 hover:shadow-glass">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/40 transition">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-primary">Ghost Immobiliser</h3>
+          <p class="text-gray-300 mb-4">Industry-leading anti-theft protection. Undetectable. Unbeatable.</p>
+          <a href="services.html#security" class="inline-flex items-center text-primary font-medium hover:underline">
+            Learn More
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <hr>
+    <section class="py-20 bg-gradient-to-b from-black to-accent/30">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
+      Why Drivers Trust Smart Auto Electrics
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      
+      <!-- Certified Technicians -->
+      <div data-aos="zoom-in" class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
+        <div class="text-4xl font-bold text-primary">Gear</div>
+        <p class="mt-2 text-sm font-medium">Certified Technicians</p>
+        <p class="text-xs text-gray-400">10+ years in diagnostics & tuning</p>
+      </div>
+
+      <!-- Mobile Service -->
+      <div data-aos="zoom-in" data-aos-delay="100" class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
+        <div class="text-4xl font-bold text-primary">Van</div>
+        <p class="mt-2 text-sm font-medium">Mobile Service</p>
+        <p class="text-xs text-gray-400">We come to your home or work</p>
+      </div>
+
+      <!-- Latest Tech -->
+      <div data-aos="zoom-in" data-aos-delay="200" class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
+        <div class="text-4xl font-bold text-primary">Lightbulb</div>
+        <p class="mt-2 text-sm font-medium">Latest Tech</p>
+        <p class="text-xs text-gray-400">All major makes supported</p>
+      </div>
+
+      <!-- Transparent Pricing -->
+      <div data-aos="zoom-in" data-aos-delay="300" class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
+        <div class="text-4xl font-bold text-primary">Chat</div>
+        <p class="mt-2 text-sm font-medium">Transparent Pricing</p>
+        <p class="text-xs text-gray-400">Clear diagnostics before work</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <hr>
+<section class="py-20 container mx-auto px-6">
+  <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">Happy Drivers</span>
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Testimonial 1 -->
+    <div data-aos="fade-up" class="p-8 bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl hover:border-primary/40 transition-all duration-300">
+      <div class="flex mb-4">
+        <span class="text-yellow-400">5 stars</span>
+      </div>
+      <p class="text-lg italic mb-4">"Smart Auto Electrics tuned my BMW — smoother, faster, and better mileage! Came to my office for service. Highly recommend!"</p>
+      <p class="text-primary font-semibold">James P., London</p>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div data-aos="fade-up" data-aos-delay="100" class="p-8 bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl hover:border-primary/40 transition-all duration-300">
+      <div class="flex mb-4">
+        <span class="text-yellow-400">5 stars</span>
+      </div>
+      <p class="text-lg italic mb-4">"Great mobile diagnostics! Found the issue my local garage couldn’t. Fixed in under an hour."</p>
+      <p class="text-primary font-semibold">Samantha R., Croydon</p>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div data-aos="fade-up" data-aos-delay="200" class="p-8 bg-gradient-to-br from-accent/20 to-black/50 backdrop-blur-md border border-primary/20 rounded-2xl hover:border-primary/40 transition-all duration-300">
+      <div class="flex mb-4">
+        <span class="text-yellow-400">5 stars</span>
+      </div>
+      <p class="text-lg italic mb-4">"Ghost immobiliser installed in my Audi. Peace of mind and zero hassle. Top service!"</p>
+      <p class="text-primary font-semibold">Michael T., Manchester</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 bg-gradient-to-r from-primary via-cyan-500 to-primary text-dark">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to experience peak performance?</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">Join 500+ drivers who trust Smart Auto Electrics.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="inline-block px-10 py-5 bg-black text-primary font-bold rounded-full text-lg hover:bg-gray-900 hover:shadow-neon transition-all duration-300">
+            Book Now
+          </a>
+          <a href="contact.html#quote" class="inline-block px-10 py-5 bg-transparent border-2 border-black text-black font-bold rounded-full text-lg hover:bg-black/20 transition-all duration-300">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div include-html="components/footer.html"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script>
+      AOS.init({ once: true, duration: 1000 });
+
+      // Lazy load video
+      document.addEventListener("DOMContentLoaded", () => {
+        const videos = document.querySelectorAll('video[loading="lazy"]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              video.src = video.dataset.src;
+              video.load();
+              observer.unobserve(video);
+            }
+          });
+        });
+        videos.forEach(v => observer.observe(v));
+      });
+
+      // Simple testimonial slider (no external lib)
+      const slider = document.querySelector('.animate-slide');
+      if (slider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => { isDown = false; });
+        slider.addEventListener('mouseup', () => { isDown = false; });
+        slider.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 2;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+      }
+    </script>
+    <script src="js/include.js"></script>
+
+    <style>
+      @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+      }
+      .animate-slide {
+        display: flex;
+        width: max-content;
+        animation: slide 20s linear infinite;
+      }
+      .animate-slide:hover {
+        animation-play-state: paused;
+      }
+      @media (max-width: 768px) {
+        .animate-slide { animation-duration: 15s; }
+      }
+    </style>
+  </body>
+</html>

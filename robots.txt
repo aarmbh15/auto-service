@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://autoelite.co.uk/sitemap.xml
