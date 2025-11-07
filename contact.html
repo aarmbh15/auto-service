@@ -56,6 +56,14 @@
 
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- PARTICLES.JS LIBRARY (MUST LOAD BEFORE YOUR SCRIPT) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   </head>
   <body class="bg-dark text-light min-h-screen">
     <!-- Header -->
@@ -63,23 +71,27 @@
     <div include-html="components/whatsapp-button.html"></div>
 
     <!-- Hero Section -->
-    <section class="relative py-24 md:py-32 overflow-hidden">
+     <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
       <div
         class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"
       ></div>
+      <!-- Particle Canvas (behind content) -->
+    <div id="particles-js" class="absolute inset-0 z-5"></div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
       <div
         class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] relative z-10 text-center"
       >
-        <h1
-          class="text-5xl md:text-7xl font-bold mb-12 mt-14 md:mt-0 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 pb-2 md:pb-4 leading-tight tracking-tight animate-pulse"
-        >
-          Contact & Booking
+        <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">Contact & Booking</span>
         </h1>
-        <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 text-white">
+        <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
           Book your ECU remap, diagnostics, or Ghost immobiliser installation.
           Mobile across the UK or visit our workshop.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+
+        <div data-aos="fade-up" data-aos-delay="200" class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact-form"
             class="inline-block bg-primary text-dark py-3 px-8 rounded-full font-bold hover:shadow-neon transition transform hover:scale-105"
@@ -500,7 +512,7 @@
         </iframe>
 
         <!-- SINGLE VIDEO (Removed duplicate) -->
-        <video
+        <!-- <video
           id="workshop-video"
           poster="https://images.unsplash.com/photo-1544636331-9007c6c9c9e8?auto=format&fit=crop&w=1200&q=80"
           class="w-full mt-8 rounded-xl shadow-glass"
@@ -511,7 +523,36 @@
         >
           <source src="assets/car.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> -->
+        <!-- REPLACED VIDEO WITH IMAGE -->
+  <!-- <div class="mt-8 flex justify-center">
+    <img 
+      src="assets/contact1.jpg" 
+      alt="Smart Auto Electrics technician performing mobile diagnostics on luxury vehicle" 
+      class="w-full max-w-2xl rounded-xl shadow-glass object-cover"
+      loading="lazy"
+    >
+  </div> -->
+      <div class="mt-8 flex justify-center">
+        <div id="image-slider" class="relative w-full max-w-2xl h-96 overflow-hidden rounded-xl shadow-glass">
+          <!-- Images -->
+          <img src="assets/contact1.jpg" alt="Smart Auto Electrics 1"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+              loading="lazy">
+          <img src="assets/contact2.jpg" alt="Smart Auto Electrics 2"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+              loading="lazy">
+          <img src="assets/contact3.jpg" alt="Smart Auto Electrics 3"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+              loading="lazy">
+          <img src="assets/contact4.jpg" alt="Smart Auto Electrics 4"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+              loading="lazy">
+          <img src="assets/contact5.jpg" alt="Smart Auto Electrics 5"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+              loading="lazy">
+        </div>
+      </div>
       </div>
     </section>
 
@@ -521,6 +562,7 @@
     <!-- ==================== SCRIPTS ==================== -->
     <script src="js/include.js"></script>
     <script src="js/contact.js"></script>
+
     <!-- COUNTRY CODE + FULL PHONE HANDLER -->
     <script>
       document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -544,5 +586,44 @@
           }
         });
     </script>
+    <!-- At the bottom of <body>, just before closing </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="js/animation.js" defer></script>
+<script src="js/particles-hero.js" defer></script>
+
+<!-- IMAGE SLIDER SCRIPT (MUST BE LAST) -->
+<script>
+  // Wait for everything to load
+  window.addEventListener('load', () => {
+    const slides = document.querySelectorAll('#image-slider img');
+    if (slides.length === 0) {
+      console.error('No images found in #image-slider');
+      return;
+    }
+
+    let index = 0;
+    slides[0].classList.add('opacity-100');
+    slides[0].classList.remove('opacity-0');
+
+    setInterval(() => {
+      // Fade out current
+      slides[index].classList.replace('opacity-100', 'opacity-0');
+
+      // Next
+      index = (index + 1) % slides.length;
+
+      // Fade in next
+      slides[index].classList.replace('opacity-0', 'opacity-100');
+    }, 3000);
+  });
+</script>
+
+  <style>
+    #particles-js {
+      z-index: 5 !important;
+    }
+    </style>
   </body>
 </html>

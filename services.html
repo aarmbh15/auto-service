@@ -2,24 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Services | AutoElite – ECU Remap, Diagnostics, Security</title>
+  <title>Services | Smart Auto Electrics – ECU Remap, Diagnostics, Security</title>
   <meta name="description" content="Professional ECU tuning, vehicle diagnostics, auto locksmith, security upgrades, and mobile services.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: "#19D8F8", accent: "#013E75", dark: "#000000", light: "#F8FAFC" },
+          colors: { 
+            primary: "#19D8F8", 
+            accent: "#013E75", 
+            dark: "#000000", 
+            light: "#F8FAFC" 
+          },
           fontFamily: { sans: ["'Space Grotesk'", "system-ui"] },
-          boxShadow: { glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', neon: '0 0 20px rgba(25, 216, 248, 0.5)' },
+          boxShadow: { 
+            glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', 
+            neon: '0 0 20px rgba(25, 216, 248, 0.5)' 
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'scan': 'scan 2s linear infinite',
+            'code': 'code 1.5s steps(20) infinite',
+            'line-grow': 'lineGrow 1.5s ease-out forwards',  // Added
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            scan: {
+              '0%': { transform: 'translateY(-100%)' },
+              '100%': { transform: 'translateY(100%)' },
+            },
+            code: {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '100% 50%' },
+            },
+            lineGrow: {  // Added
+              '0%': { height: '0%' }, 
+              '100%': { height: '100%' } 
+            },
+          }
         },
       },
     };
   </script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
-   <link rel="icon" type="image/png" href="assets/logo.png" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- PARTICLES.JS LIBRARY (MUST LOAD BEFORE YOUR SCRIPT) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 <body class="bg-dark text-light min-h-screen">
 
@@ -27,25 +66,25 @@
  <div include-html="components/whatsapp-button.html"></div>
 
   <!-- HERO SECTION -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-accent via-black to-accent/90 py-32 md:py-40">
-    <!-- Optional Background Image (Uncomment & replace with your hero image) -->
-    <!-- <div class="absolute inset-0 -z-10">
-      <img src="assets/hero-services.jpg" alt="AutoElite Performance" class="w-full h-full object-cover opacity-40">
-    </div> -->
-
-    <!-- Subtle animated grid overlay -->
+   <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
     <div class="absolute inset-0 -z-10 opacity-10">
       <div class="h-full w-full bg-gradient-to-t from-transparent via-primary/20 to-transparent"></div>
     </div>
+    <!-- Particle Canvas (behind content) -->
+    <div id="particles-js" class="absolute inset-0 z-5"></div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
 
     <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] relative z-10 text-center">
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-cyan-300 to-primary animate-pulse leading-tight">
-        Premium Performance<br><span class="text-4xl md:text-6xl">Delivered</span>
-      </h1>
-      <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 leading-relaxed">
-        ECU Remapping • Mobile Diagnostics • Ghost Immobiliser • UK-Wide Service
-      </p>
-      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12">
+      
+      <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">Premium Performance Delivered</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
+          ECU Remapping • Mobile Diagnostics • Ghost Immobiliser • UK-Wide Service
+        </p>
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12">
         <a href="#ecu" class="inline-flex items-center px-10 py-5 bg-primary text-dark font-bold rounded-full text-lg hover:bg-cyan-400 hover:shadow-neon transition-all duration-300 transform hover:scale-105">
           Explore Services
         </a>
@@ -54,21 +93,18 @@
         </a>
       </div>
 
-      <!-- Trust Badges -->
       <div class="flex flex-wrap justify-center gap-8 mt-16 text-sm text-gray-400">
-        <div class="flex items-center gap-2">
+        <div data-aos="fade-up" data-aos-delay="300" class="flex items-center gap-2">
           <span class="text-primary">Check</span> 5,000+ Vehicles Tuned
         </div>
-        <div class="flex items-center gap-2">
+        <div data-aos="fade-up" data-aos-delay="400" class="flex items-center gap-2">
           <span class="text-primary">Check</span> UK Mobile Service
         </div>
-        <div class="flex items-center gap-2">
+        <div data-aos="fade-up" data-aos-delay="500" class="flex items-center gap-2">
           <span class="text-primary">Check</span> Insurance Approved
         </div>
       </div>
     </div>
-
-    <!-- Neon bottom glow line -->
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-70"></div>
   </section>
 
@@ -82,8 +118,28 @@
 
     <!-- ECU Remap -->
     <div id="ecu" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-right">
-      <div>
-        <video poster="assets/ecu-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/ECU_ID.mp4"></video>
+      <div class="relative">
+        <!-- Animated ECU Chip -->
+        <div class="relative w-full h-64 md:h-80 bg-gradient-to-br from-accent/30 to-black/60 backdrop-blur-md rounded-xl overflow-hidden border border-primary/30 shadow-glass">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-primary/20 rounded-lg border-2 border-primary/50 animate-pulse-slow">
+              <div class="w-full h-full flex items-center justify-center text-4xl md:text-5xl font-bold text-primary">
+                ECU
+              </div>
+            </div>
+          </div>
+          <!-- Floating code lines -->
+          <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-8 left-8 text-xs font-mono text-cyan-300 opacity-60 animate-code bg-gradient-to-r from-transparent via-cyan-300 to-transparent bg-clip-text">
+              0x1A2B: BOOST +35% | TORQUE +42%
+            </div>
+            <div class="absolute bottom-8 right-8 text-xs font-mono text-cyan-300 opacity-60 animate-code delay-500 bg-gradient-to-r from-transparent via-cyan-300 to-transparent bg-clip-text">
+              FUEL MAP OPTIMIZED | STAGE 2 READY
+            </div>
+          </div>
+          <!-- Scan line effect -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-70 animate-scan"></div>
+        </div>
       </div>
       <div>
         <h2 class="text-3xl font-bold mb-4 text-primary">ECU Remapping</h2>
@@ -99,7 +155,7 @@
       </div>
     </div>
 
-    <hr>
+    <hr class="border-primary/20">
 
     <!-- Mobile Diagnostics -->
     <div id="diagnostics" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-left">
@@ -115,17 +171,49 @@
           Book Diagnostics
         </a>
       </div>
-      <div>
-        <video poster="assets/diag-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/DIAG_ID.mp4"></video>
+      <div class="relative">
+        <!-- Animated Diagnostic Screen -->
+        <div class="relative w-full h-64 md:h-80 bg-black/70 backdrop-blur-md rounded-xl overflow-hidden border border-primary/30 shadow-glass p-6">
+          <div class="h-full flex flex-col justify-between font-mono text-xs md:text-sm">
+            <div class="text-green-400 animate-pulse">OBD-II CONNECTED</div>
+            <div class="space-y-1 text-cyan-300">
+              <div>P0300: Random Misfire <span class="text-red-400">ACTIVE</span></div>
+              <div>P0420: Catalyst Efficiency <span class="text-yellow-400">PENDING</span></div>
+              <div>Live RPM: <span class="text-primary">2850</span></div>
+              <div>Boost: <span class="text-primary">1.8 bar</span></div>
+            </div>
+            <div class="flex justify-between text-gray-500">
+              <span>SCANNING...</span>
+              <span class="text-primary animate-pulse">●●●</span>
+            </div>
+          </div>
+          <!-- Terminal cursor blink -->
+          <div class="absolute bottom-4 right-4 text-primary animate-pulse">_</div>
+        </div>
       </div>
     </div>
 
-    <hr>
+    <hr class="border-primary/20">
 
     <!-- Ghost Immobiliser -->
     <div id="security" class="grid md:grid-cols-2 gap-12 mb-20 items-center" data-aos="fade-right">
-      <div>
-        <video poster="assets/ghost-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/GHOST_ID.mp4"></video>
+      <div class="relative">
+        <!-- Animated Lock System -->
+        <div class="relative w-full h-64 md:h-80 bg-gradient-to-br from-red-900/30 to-black/60 backdrop-blur-md rounded-xl overflow-hidden border border-red-500/40 shadow-glass flex items-center justify-center">
+          <div class="relative">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-red-500/60 animate-pulse-slow flex items-center justify-center">
+              <svg class="w-16 h-16 md:w-20 md:h-20 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-48 h-48 md:w-56 md:h-56 border-2 border-red-500/30 rounded-full animate-ping"></div>
+            </div>
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-bounce">
+              SECURED
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <h2 class="text-3xl font-bold mb-4 text-primary">Ghost Immobiliser & Security</h2>
@@ -141,7 +229,7 @@
       </div>
     </div>
 
-    <hr>
+    <hr class="border-primary/20">
 
     <!-- FAQ -->
     <div class="mt-24 max-w-4xl mx-auto">
@@ -167,7 +255,7 @@
   <section class="py-20 bg-gradient-to-r from-primary via-cyan-500 to-primary text-dark">
     <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to experience peak performance?</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto">Join 500+ drivers who trust AutoElite.</p>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">Join 500+ drivers who trust Smart Auto Electrics.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="contact.html" class="inline-block px-10 py-5 bg-black text-primary font-bold rounded-full text-lg hover:bg-gray-900 hover:shadow-neon transition-all duration-300">
           Book Now
@@ -180,9 +268,37 @@
   </section>
 
   <div include-html="components/footer.html"></div>
-
-  <!-- Load your scripts file -->
   <div include-html="scripts.html"></div>
   <script src="js/include.js"></script>
+
+  <!-- At the bottom of <body>, just before closing </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="js/animation.js" defer></script>
+<script src="js/particles-hero.js" defer></script>
+
+  <style>
+    #particles-js {
+      z-index: 5 !important;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #19D8F8, #013E75);
+      transform: translateX(-50%);
+      height: 0;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(25, 216, 248, 0.6);
+      animation: lineGrow 1.5s ease-out forwards;
+    }
+    @media (max-width: 768px) { 
+      .timeline-line { display: none; } 
+    }
+  </style>
+  <!-- === END TIMELINE ANIMATION === -->
+
 </body>
 </html>

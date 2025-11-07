@@ -6,7 +6,6 @@
   <title>Our Process | Smart Auto Electrics – How We Work</title>
   <meta name="description" content="Step-by-step tuning process: consultation, diagnostics, remap, dyno verification, and delivery." />
   
-  <!-- Tailwind + Custom Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,116 +30,174 @@
       },
     };
   </script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
-   <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- PARTICLES.JS LIBRARY (MUST LOAD BEFORE YOUR SCRIPT) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 <body class="bg-dark text-light min-h-screen">
 
-  <!-- Header -->
- <div include-html="components/header.html"></div>
- <div include-html="components/whatsapp-button.html"></div>
+  <div include-html="components/header.html"></div>
+  <div include-html="components/whatsapp-button.html"></div>
 
   <!-- HERO SECTION -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
     <video autoplay muted loop playsinline poster="assets/process-hero-poster.jpg" class="absolute w-full h-full object-cover -z-10" loading="lazy" data-src="assets/process-hero.mp4">
       <source type="video/mp4" />
     </video>
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-primary/20"></div>
+    <!-- Particle Canvas (behind content) -->
+    <div id="particles-js" class="absolute inset-0 z-5"></div>
+
 
     <div class="container mx-auto px-6 text-center z-10">
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">
-          Our Proven Process
-        </span>
-      </h1>
-      <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-        From consultation to dyno-verified performance — every step is engineered for perfection.
-      </p>
-      <a href="contact.html" class="group relative inline-flex items-center px-8 py-4 bg-primary text-dark font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon">
+      
+      <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">Our Proven Process</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
+          From consultation to dyno-verified performance — every step is engineered for perfection.
+        </p>
+
+      <a data-aos="fade-up" data-aos-delay="200" href="contact.html" class="group relative inline-flex items-center px-8 py-4 bg-primary text-dark font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon">
         <span class="relative z-10">Start Your Journey</span>
         <span class="absolute inset-0 bg-white/20 scale-0 group-hover:scale-150 transition-transform duration-500 rounded-full"></span>
       </a>
     </div>
-    <!-- Decorative neon line -->
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
   </section>
 
-  <!-- PROCESS STEPS -->
+  <!-- PROCESS TIMELINE WITH SLIDE-IN ANIMATIONS -->
   <section class="py-20 container mx-auto px-6">
     <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
       <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">How It Works</span>
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Step 1 -->
-      <div class="group text-center" data-aos="fade-up">
-        <div class="w-24 h-24 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center text-4xl font-bold text-primary group-hover:bg-primary/40 transition">
-          1
-        </div>
-        <h3 class="text-2xl font-bold mb-3 text-primary">Consultation</h3>
-        <p class="text-gray-300">We discuss your goals, vehicle history, and desired outcomes.</p>
-      </div>
+    <!-- Timeline Container -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Central vertical line -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 transform -translate-x-1/2"></div>
 
-      <!-- Step 2 -->
-      <div class="group text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-24 h-24 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center text-4xl font-bold text-primary group-hover:bg-primary/40 transition">
-          2
+      <div class="space-y-20">
+        <!-- Step 1: LEFT → Slide in from RIGHT -->
+        <div class="relative timeline-step flex justify-start" data-aos="fade-right" data-aos-duration="800">
+          <div class="w-full md:w-1/2 pr-12 flex items-center gap-8">
+            <div class="w-36 h-36 rounded-lg overflow-hidden border-4 border-primary/50 group-hover:shadow-neon transition duration-300 flex-shrink-0 z-10">
+              <img src="assets/s1.png" alt="Consultation Icon" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold mb-2 text-primary">1. Consultation</h3>
+              <p class="text-gray-300 text-lg">We discuss your goals, vehicle history, and desired outcomes to define the perfect tuning strategy.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-3 text-primary">Diagnostics</h3>
-        <p class="text-gray-300">Full OBD-II scan, fault check, and health report before any work.</p>
-      </div>
 
-      <!-- Step 3 -->
-      <div class="group text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-24 h-24 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center text-4xl font-bold text-primary group-hover:bg-primary/40 transition">
-          3
+        <!-- Step 2: RIGHT → Slide in from LEFT -->
+        <div class="relative timeline-step flex justify-end" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+          <div class="w-full md:w-1/2 pl-12 flex items-center gap-8 flex-row-reverse text-right">
+            <div class="w-36 h-36 rounded-lg overflow-hidden border-4 border-primary/50 group-hover:shadow-neon transition duration-300 flex-shrink-0 z-10">
+              <img src="assets/s2.png" alt="Diagnostics Icon" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold mb-2 text-primary">2. Diagnostics</h3>
+              <p class="text-gray-300 text-lg">A full OBD-II scan, fault check, and comprehensive health report are performed before any work begins.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-3 text-primary">Custom Remap</h3>
-        <p class="text-gray-300">Tailored ECU file written and uploaded securely on-site.</p>
-      </div>
 
-      <!-- Step 4 -->
-      <div class="group text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-24 h-24 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center text-4xl font-bold text-primary group-hover:bg-primary/40 transition">
-          4
+        <!-- Step 3: LEFT → Slide in from RIGHT -->
+        <div class="relative timeline-step flex justify-start" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+          <div class="w-full md:w-1/2 pr-12 flex items-center gap-8">
+            <div class="w-36 h-36 rounded-lg overflow-hidden border-4 border-primary/50 group-hover:shadow-neon transition duration-300 flex-shrink-0 z-10">
+              <img src="assets/s3.png" alt="Custom Remap Icon" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold mb-2 text-primary">3. Custom Remap</h3>
+              <p class="text-gray-300 text-lg">The tailored ECU file is expertly written and uploaded securely to your vehicle on-site.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-3 text-primary">Dyno Verification</h3>
-        <p class="text-gray-300">Before/after dyno runs to prove real-world gains.</p>
-      </div>
 
-      <!-- Step 5 -->
-      <div class="group text-center" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-24 h-24 mx-auto mb-6 bg-primary/20 rounded-full flex items-center justify-center text-4xl font-bold text-primary group-hover:bg-primary/40 transition">
-          5
+        <!-- Step 4: RIGHT → Slide in from LEFT -->
+        <div class="relative timeline-step flex justify-end" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+          <div class="w-full md:w-1/2 pl-12 flex items-center gap-8 flex-row-reverse text-right">
+            <div class="w-36 h-36 rounded-lg overflow-hidden border-4 border-primary/50 group-hover:shadow-neon transition duration-300 flex-shrink-0 z-10">
+              <img src="assets/s4.png" alt="Dyno Verification Icon" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold mb-2 text-primary">4. Dyno Verification</h3>
+              <p class="text-gray-300 text-lg">Before-and-after dyno runs are conducted to scientifically prove the real-world performance gains.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-3 text-primary">Handover & Support</h3>
-        <p class="text-gray-300">You drive away with full report + lifetime file backup.</p>
+
+        <!-- Step 5: LEFT → Slide in from RIGHT -->
+        <div class="relative timeline-step flex justify-start" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
+          <div class="w-full md:w-1/2 pr-12 flex items-center gap-8">
+            <div class="w-36 h-36 rounded-lg overflow-hidden border-4 border-primary/50 group-hover:shadow-neon transition duration-300 flex-shrink-0 z-10">
+              <img src="assets/s5.png" alt="Handover and Support Icon" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold mb-2 text-primary">5. Handover & Support</h3>
+              <p class="text-gray-300 text-lg">You drive away with a full performance report and the peace of mind of our lifetime file backup.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- FINAL CTA -->
   <section class="py-20 bg-gradient-to-r from-primary via-cyan-500 to-primary text-dark">
-    <div class="container mx-auto px-6 text-center">
+    <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready for Stage 1?</h2>
       <p class="text-lg mb-8 max-w-2xl mx-auto">Book now and experience the Smart Auto Electrics difference.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="contact.html" class="inline-block px-10 py-5 bg-black text-primary font-bold rounded-full text-lg hover:bg-gray-900 hover:shadow-neon transition-all duration-300">
-          Book Now
-        </a>
-        <a href="contact.html#quote" class="inline-block px-10 py-5 bg-transparent border-2 border-black text-black font-bold rounded-full text-lg hover:bg-black/20 transition-all duration-300">
-          Get a Quote
-        </a>
+        <a href="contact.html" class="inline-block px-10 py-5 bg-black text-primary font-bold rounded-full text-lg hover:bg-gray-900 hover:shadow-neon transition-all">Book Now</a>
+        <a href="contact.html#quote" class="inline-block px-10 py-5 bg-transparent border-2 border-black text-black font-bold rounded-full text-lg hover:bg-black/20 transition-all">Request a Quote</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <div include-html="components/footer.html"></div>
-
-  <!-- Scripts -->
   <div include-html="scripts.html"></div>
   <script src="js/include.js"></script>
+
+  <!-- At the bottom of <body>, just before closing </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="js/animation.js" defer></script>
+<script src="js/particles-hero.js" defer></script>
+
+  <style>
+    #particles-js {
+      z-index: 5 !important;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #19D8F8, #013E75);
+      transform: translateX(-50%);
+      height: 0;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(25, 216, 248, 0.6);
+      animation: lineGrow 1.5s ease-out forwards;
+    }
+    @keyframes lineGrow {
+      to { height: 100%; }
+    }
+    @media (max-width: 768px) {
+      .timeline-line { display: none; }
+    }
+  </style>
 </body>
 </html>

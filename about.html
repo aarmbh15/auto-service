@@ -21,17 +21,42 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: "#19D8F8", accent: "#013E75", dark: "#000000", light: "#F8FAFC" },
+          colors: { 
+            primary: "#19D8F8", 
+            accent: "#013E75", 
+            dark: "#000000", 
+            light: "#F8FAFC" 
+          },
           fontFamily: { sans: ["'Space Grotesk'", "system-ui"] },
-          boxShadow: { glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', neon: '0 0 20px rgba(25, 216, 248, 0.5)' },
+          boxShadow: { 
+            glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)', 
+            neon: '0 0 20px rgba(25, 216, 248, 0.5)' 
+          },
+          animation: {
+            'line-grow': 'lineGrow 1.5s ease-out forwards',
+          },
+          keyframes: {
+            lineGrow: { 
+              '0%': { height: '0%' }, 
+              '100%': { height: '100%' } 
+            },
+          },
         },
       },
     };
   </script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
-   <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- PARTICLES.JS LIBRARY (MUST LOAD BEFORE YOUR SCRIPT) -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+
 </head>
 <body class="bg-dark text-light min-h-screen">
 
@@ -40,11 +65,19 @@
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
     <img src="assets/about-banner.jpg" alt="Workshop Team" class="absolute w-full h-full object-cover">
+    <!-- Particle Canvas (behind content) -->
+    <div id="particles-js" class="absolute inset-0 z-5"></div>
+
+    <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
     <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center z-10">
-      <h1 class="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">
-        About Smart Auto Electrics 
-      </h1>
+      
+    <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300 animate-pulse leading-tight">About Smart Auto Electrics</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 text-white">
+          IMI-Certified • 5,000+ Vehicles Tuned • Mobile Precision
+        </p>
     </div>
     <!-- Decorative neon line -->
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
@@ -59,37 +92,27 @@
         <br><br>Smart Auto Electrics, where innovation, integrity, and expertise power every journey.
         </p>
       <ul class="space-y-3 text-gray-300">
-        <li class="flex items-center"><span class="text-primary mr-2">✓</span> IMI Certified Technicians</li>
-        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Official Alientech & KESS Partners</li>
-        <li class="flex items-center"><span class="text-primary mr-2">✓</span> Over 5,000 Vehicles Tuned</li>
+        <li class="flex items-center"><span class="text-primary mr-2">Checkmark</span> IMI Certified Technicians</li>
+        <li class="flex items-center"><span class="text-primary mr-2">Checkmark</span> Official Alientech & KESS Partners</li>
+        <li class="flex items-center"><span class="text-primary mr-2">Checkmark</span> Over 5,000 Vehicles Tuned</li>
       </ul>
     </div>
-    <div data-aos="fade-left">
+    <!-- <div data-aos="fade-left">
       <video poster="assets/founder-poster.jpg" controls class="w-full rounded-xl shadow-glass" loading="lazy" data-src="https://player.vimeo.com/external/FOUNDER_ID.mp4"></video>
-    </div>
+    </div> -->
+    <!-- REPLACED VIDEO WITH IMAGE -->
+  <div data-aos="fade-left" class="flex items-center justify-center">
+    <img 
+      src="assets/about-founder1.jpg" 
+      alt="Founder of Smart Auto Electrics in workshop with diagnostic tools" 
+      class="w-full max-w-lg rounded-xl shadow-glass object-cover"
+      loading="lazy"
+    >
+  </div>
   </section>
 
   <hr>
 
-  <!-- <section class="py-16 bg-gradient-to-b from-accent/30 to-dark">
-    <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center">
-      <h2 class="text-3xl font-bold mb-10 text-primary">Core Values</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
-          <div class="text-4xl mb-2">Safety First</div>
-          <p class="font-semibold">Safety First</p>
-        </div>
-        <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
-          <div class="text-4xl mb-2">Performance Driven</div>
-          <p class="font-semibold">Performance Driven</p>
-        </div>
-        <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-primary/20">
-          <div class="text-4xl mb-2">Customer Obsessed</div>
-          <p class="font-semibold">Customer Obsessed</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
   <!-- CORE VALUES -->
   <section class="py-16 bg-gradient-to-b from-accent/30 to-dark">
     <div class="container mx-auto px-6 md:px-0 md:pl-[6.5rem] md:pr-[3.5rem] text-center">
@@ -140,5 +163,36 @@
 
   <div include-html="scripts.html"></div>
   <script src="js/include.js"></script>
+
+  <!-- At the bottom of <body>, just before closing </body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="js/animation.js" defer></script>
+<!-- === PARTICLES INITIALIZATION (NEW) === -->
+  <script src="js/particles-hero.js" defer></script>
+
+  <style>
+    #particles-js {
+      z-index: 5 !important;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #19D8F8, #013E75);
+      transform: translateX(-50%);
+      height: 0;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(25, 216, 248, 0.6);
+      animation: lineGrow 1.5s ease-out forwards;
+    }
+    @media (max-width: 768px) { 
+      .timeline-line { display: none; } 
+    }
+  </style>
+  <!-- === END TIMELINE ANIMATION === -->
+
 </body>
 </html>
