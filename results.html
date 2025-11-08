@@ -199,5 +199,41 @@
       .timeline-line { display: none; }
     }
   </style>
+  <style>
+  /* FIX: Prevent timeline cards from touching screen edges on mobile */
+  @media (max-width: 768px) {
+    .timeline-step > div {
+      width: 100% !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .timeline-step .w-36 {
+      width: 80px !important;
+      height: 80px !important;
+      min-width: 80px !important;
+    }
+    .timeline-step .gap-8 {
+      gap: 1rem !important;
+    }
+    .timeline-step h3 {
+      font-size: 1.5rem !important;
+    }
+    .timeline-step p {
+      font-size: 1rem !important;
+    }
+    /* Ensure text doesn't overflow */
+    .timeline-step div:last-child {
+      word-break: break-word;
+    }
+  }
+
+  /* Optional: Improve spacing on small phones */
+  @media (max-width: 480px) {
+    .timeline-step .w-36 {
+      width: 70px !important;
+      height: 70px !important;
+    }
+  }
+</style>
 </body>
 </html>

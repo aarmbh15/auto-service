@@ -66,7 +66,9 @@
  <div include-html="components/whatsapp-button.html"></div>
 
   <!-- HERO SECTION -->
-   <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5">
+   <!-- <section class="relative h-screen flex items-center justify-center overflow-hidden mt-5"> -->
+    <!-- HERO SECTION - MOBILE SAFE -->
+<section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-[max(env(safe-area-inset-top,1.5rem),5rem)] pb-10 md:pt-0">
     <div class="absolute inset-0 -z-10 opacity-10">
       <div class="h-full w-full bg-gradient-to-t from-transparent via-primary/20 to-transparent"></div>
     </div>
